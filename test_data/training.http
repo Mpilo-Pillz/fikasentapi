@@ -1,0 +1,19 @@
+### Add new completed Training course
+POST http://localhost:4000/training/new
+Content-Type: application/json
+
+{
+  "title": "Creating End to End Tests With Cucumber & Selenium WebDriver",
+  "author": "Matthew Casperson",
+  "duration": "1",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627966285/cucumberintro_u4axvt.jpg",
+  "dateCompleted": "15-03-2018",
+  "trainingUrl": "https://www.udemy.com/course/creating-end-to-end-tests-with-cucumber-and-webdriver/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/matthewcasperson/"
+    
+}
+
+### Get All Training
+GET http://localhost:4000/training/

@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-type MediaType = 'book' | 'video';
+type MediaType = 'Book' | 'Video';
 
 @Entity()
 export class Training {
@@ -22,4 +22,6 @@ export class Training {
   trainingUrl: string;
   @Column()
   trainingType: string;
+  @Column()
+  authorURL: string;
 }
