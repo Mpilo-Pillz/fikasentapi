@@ -7,6 +7,7 @@ import { CvModule } from './cv/cv.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Training } from './cv/training/training.entity';
 import { HttpModule } from '@nestjs/axios';
+import { ConstantsService } from './constants/constants.service';
 
 @Module({
   imports: [
@@ -31,6 +32,6 @@ import { HttpModule } from '@nestjs/axios';
     CvModule,
   ],
   controllers: [AppController],
-  providers: [AppService, ConfigService],
+  providers: [AppService, ConfigService, ConstantsService],
 })
 export class AppModule {}
