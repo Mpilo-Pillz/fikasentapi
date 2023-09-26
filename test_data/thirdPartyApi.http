@@ -3,3 +3,6 @@ GET http://localhost:4000/thirdparty/city-name?cityName=Mbabane&units=metric
 
 ### Get weather by geo location
 GET http://localhost:4000/thirdparty/geo-location?lat=-26.195246&lng=28.034088&units=metric
+
+### Get coin price
+GET http://localhost:4000/thirdparty/crypto-currency?cryptoCoin=ZAR
