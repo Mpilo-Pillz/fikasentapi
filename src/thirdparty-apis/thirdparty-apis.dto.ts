@@ -13,3 +13,8 @@ export class WeatherDto {
   @IsString()
   lng: string;
 }
+
+export class CryptoCurrencyDto {
+  @IsString()
+  cryptoCoin: string;
+}

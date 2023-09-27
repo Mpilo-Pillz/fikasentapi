@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { ThirdpartyApisService } from './thirdparty-apis.service';
 import { query } from 'express';
-import { WeatherDto } from './thirdparty-apis.dto';
+import { CryptoCurrencyDto, WeatherDto } from './thirdparty-apis.dto';
 
 @Controller('thirdparty')
 export class ThirdpartyApisController {
@@ -22,5 +22,10 @@ export class ThirdpartyApisController {
       query.lng,
       query.units,
     );
+  }
+
+  @Get('/crypto-currency')
+  async getCryptoPrice(@Query() query: CryptoCurrencyDto) {
+    return this.thirdpartyApisService.getCryptoPrice(query.cryptoCoin);
   }
 }
