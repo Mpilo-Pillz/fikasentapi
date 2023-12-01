@@ -12,8 +12,95 @@ Content-Type: application/json
   "trainingUrl": "https://www.udemy.com/course/creating-end-to-end-tests-with-cucumber-and-webdriver/",
   "trainingType": "Video",
   "authorURL": "https://www.udemy.com/user/matthewcasperson/"
-    
+}
+
+POST http://localhost:4000/training/new
+Content-Type: application/json
+
+{
+  "title": "Automate the Boring Stuff with Python Programming",
+  "author": "Al Sweigart",
+  "duration": "9.5",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627965671/alpythonautomation_mpijnl.jpg",
+  "dateCompleted": "25-10-2017",
+  "trainingUrl": "https://www.udemy.com/course/automate/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/al-sweigart/"
 }
 
 ### Get All Training
-GET http://localhost:4000/training/
+GET http://localhost:3000/training/
+### Get All Training
+GET https://fikasentani.fly.dev/training/
+
+### Create Training
+POST https://fikasentani.fly.dev/training/new
+Content-Type: application/json
+
+{
+  "title": "The Complete 2021 Flutter Development Bootcamp with Dart",
+  "author": "Dr. Angela",
+  "duration": "23.5",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627965385/angeladart_zldji9.jpg",
+  "dateCompleted": "20-07-2019",
+  "trainingUrl": "https://www.udemy.com/course/flutter-bootcamp-with-dart/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/"
+}
+
+### Create Training
+POST https://fikasentani.fly.dev/training/new
+Content-Type: application/json
+
+{
+  "title": "The Complete 2021 Web Development Bootcamp",
+  "author": "Dr. Angela",
+  "duration": "55",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627689711/MpiloWebDevelopmentAngelaYu_wxoppm.jpg",
+  "dateCompleted": "11-07-2019",
+  "trainingUrl": "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/"
+}
+### Create Training
+POST https://fikasentani.fly.dev/training/new
+Content-Type: application/json
+
+{
+  "title": "The Complete JavaScript Course 2021: From Zero to Expert!",
+  "author": "Jonas Schmedtmann",
+  "duration": "28",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627965252/jsjonas_yuviwc.jpg",
+  "dateCompleted": "10-11-2019",
+  "trainingUrl": "https://www.udemy.com/course/the-complete-javascript-course/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/jonasschmedtmann/"
+}
+
+### Create Training
+POST https://fikasentani.fly.dev/training/new
+Content-Type: application/json
+
+{
+  "title": "The Complete 2021 Flutter Development Bootcamp with Dart",
+  "author": "Stone River eLearning",
+  "duration": "3",
+  "institution": "Udemy",
+  "imgUrl": "https://res.cloudinary.com/mpilopillz/image/upload/v1627965900/gamepython_orcvhj.jpg",
+  "dateCompleted": "05-01-2018",
+  "trainingUrl": "https://www.udemy.com/course/python-game-development-create-a-flappy-bird-clone/",
+  "trainingType": "Video",
+  "authorURL": "https://www.udemy.com/user/marktrego/"
+}
+
+### Update training
+PATCH http://localhost:3000/training/update/5
+Content-Type: application/json
+
+{
+    "title": "Python Game Development - Create a Flappy Bird Clone"
+}
