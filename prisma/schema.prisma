@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String   @id @default(uuid()) @db.Uuid
+  email                String   @unique
+  password             String
+  activationCode       String   @map("activation_code")
+  activationCodeExpiry DateTime @default(now()) @map("activation_code_expiry") @db.Timestamptz(6)
+  isActive             Boolean  @map("is_active")
+  lastUpdated          DateTime @default(now()) @updatedAt @map("last_updated") @db.Timestamptz(6)
+  staff                Staff[]
+  insertedDate         DateTime @default(now()) @map("inserted_date") @db.Timestamptz(6)
+
+  @@map("users")
+}
+
+model Staff {
+  id         Int      @id @default(autoincrement())
+  name       String
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String   @db.Uuid
+  staffType  StaffType @relation(fields: [staffTypeId], references: [id])
+  staffTypeId Int
+  dailyRate   Int
+  tasks      Task[]
+}
+
+model StaffType {
+  id        Int      @id @default(autoincrement())
+  type      String   @unique
+  staff     Staff[]
+}
+
+model Task {
+  id          Int      @id @default(autoincrement())
+  description String
+  date        DateTime
+  status      String
+  staff       Staff    @relation(fields: [staffId], references: [id])
+  staffId     Int
+
+  @@map("tasks")
+}
+
