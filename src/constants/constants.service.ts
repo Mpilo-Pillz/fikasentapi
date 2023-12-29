@@ -7,4 +7,6 @@ export class ConstantsService {
   WEATHER_BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
   WEATHER_API_KEY = process.env.WEATHER_API_KEY;
   DB_URL = process.env.DB_URL;
+  ENABLE_EMAIL_VERIFICATION = process.env.ENABLE_EMAIL_VERIFICATION;
+  ACTIVATION_CODE_EXPIRY_IN_DAYS = 30;
 }
