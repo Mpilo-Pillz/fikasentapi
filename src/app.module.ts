@@ -8,12 +8,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Training } from './cv/training/training.entity';
 import { HttpModule } from '@nestjs/axios';
 import { ConstantsService } from './constants/constants.service';
+import { PrismaModule } from './prisma/prisma.module';
+import { TsanyelaModule } from './tsanyela/tsanyela.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `.env.${process.env.NODE_ENV}`,
+      // envFilePath: `.env.${process.env.NODE_ENV}`,
+      envFilePath: `.env`,
     }),
     // TypeOrmModule.forRootAsync({
     //   imports: [ConfigModule],
@@ -39,7 +42,8 @@ import { ConstantsService } from './constants/constants.service';
             Object.assign(dbConfig, {
               type: 'sqlite',
               database: 'db.sqlite',
-              entities: ['**/*.entity.js'],
+              entities: [__dirname + '/cv/**/*.entity.js'],
+              // entities: ['**/*.entity.js'],
             });
 
             return dbConfig;
@@ -71,6 +75,8 @@ import { ConstantsService } from './constants/constants.service';
     HttpModule,
     ThirdpartyApisModule,
     CvModule,
+    PrismaModule,
+    TsanyelaModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService, ConstantsService],
