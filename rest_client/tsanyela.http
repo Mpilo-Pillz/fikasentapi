@@ -1,0 +1,16 @@
+POST http://localhost:3000/tsanyela/user/create
+Content-Type: application/json
+
+{
+    "email": "aych@oilerplate.com",
+    "password": "P4s$W0Rd"
+}
+
+### Login
+POST http://localhost:3000/tsanyela/auth/login
+Content-Type: application/json
+
+{
+    "email": "pillz@oilerplate.com",
+    "password": "P4s$W0Rd"
+}
