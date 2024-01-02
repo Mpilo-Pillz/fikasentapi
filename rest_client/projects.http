@@ -1,0 +1,12 @@
+### Add new PRoject
+POST http://localhost:4000/project/new
+Content-Type: application/json
+
+{
+  "title": "Fikasentech",
+  "description": "string",
+  "tools": "number",
+  "projectUrl": "string",
+  "imgUrl": "string",
+  "teamSize": "string"
+}
