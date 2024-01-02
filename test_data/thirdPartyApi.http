@@ -1,8 +1,14 @@
 ### Get weather by City Name
-GET http://localhost:4000/thirdparty/city-name?cityName=Mbabane&units=metric
+GET http://localhost:3000/thirdparty/city-name?cityName=Mbabane&units=metric
 
 ### Get weather by geo location
-GET http://localhost:4000/thirdparty/geo-location?lat=-26.195246&lng=28.034088&units=metric
+GET http://localhost:3000/thirdparty/geo-location?lat=-26.195246&lng=28.034088&units=metric
 
 ### Get coin price
 GET http://localhost:4000/thirdparty/crypto-currency?cryptoCoin=ZAR
+
+### DEBUGG
+GET http://localhost:3000/city-name?cityName=Manzini&units=metric
+
+### DEBUGG latng
+GET http://localhost:3000/thirdparty/geo-location?lat=55.755786&lng=37.617633&units=metric
