@@ -16,7 +16,7 @@ export class Task {
   status: string;
 
   @ManyToOne(() => Staff, (staff) => staff.tasks)
-  staff: Staff;
+  staff?: Staff;
 
   @Column()
   staffId: number;
