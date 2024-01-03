@@ -4,6 +4,7 @@ import {
   IsString,
   IsDate,
   IsBoolean,
+  IsNotEmpty,
 } from 'class-validator';
 
 export class CreateTaskDto {
@@ -16,8 +17,9 @@ export class CreateTaskDto {
   @IsBoolean()
   isCompleted: boolean;
 
+  @IsNotEmpty()
   @IsInt()
-  staffId: number;
+  staffId: any;
 }
 
 export class UpdateTaskDto {
@@ -33,7 +35,7 @@ export class UpdateTaskDto {
   @IsBoolean()
   isCompleted?: boolean;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsInt()
-  staffId?: number;
+  staffId: number;
 }
