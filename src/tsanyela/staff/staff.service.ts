@@ -1,13 +1,27 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateStaffDto, UpdateStaffDto } from './staff.dto';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class StaffService {
   constructor(private prisma: PrismaService) {}
 
   async create(createStaffDto: CreateStaffDto) {
-    return await this.prisma.staff.create({ data: createStaffDto });
+    const { userId, staffTypeId, ...rest } = createStaffDto;
+
+    // TODO - compare DTO with Schema
+    if (typeof userId !== 'string') {
+      throw new Error('userId must be a string.');
+    }
+
+    const data: any = {
+      ...rest,
+      userId,
+      staffType: staffTypeId ? { connect: { id: staffTypeId } } : undefined,
+    };
+
+    return this.prisma.staff.create({ data });
   }
 
   async findAll() {

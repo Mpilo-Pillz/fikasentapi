@@ -37,7 +37,7 @@ describe('StaffService', () => {
     it('should create a staff member', async () => {
       const staffDto: CreateStaffDto = {
         name: 'Linda Smith',
-        userId: 1,
+        userId: '1',
         staffTypeId: 1,
         role: '',
         contactNumber: '',

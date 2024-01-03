@@ -5,8 +5,9 @@ export class CreateStaffDto {
   @IsString()
   name: string;
 
-  @IsInt()
-  userId: number;
+  @IsNotEmpty()
+  @IsString()
+  userId: string;
 
   @IsInt()
   @IsOptional()
@@ -14,6 +15,7 @@ export class CreateStaffDto {
 
   @IsString()
   role: string;
+
   @IsString()
   contactNumber: string;
 }
@@ -23,9 +25,9 @@ export class UpdateStaffDto {
   @IsString()
   name?: string;
 
-  @IsOptional()
-  @IsInt()
-  userId?: number;
+  @IsNotEmpty()
+  @IsString()
+  userId?: string;
 
   @IsOptional()
   @IsInt()
